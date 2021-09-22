@@ -12,7 +12,7 @@ const upload = async (req, res) => {
         }
 
         let courses = [];
-        let path = __basedir + "/assests/uploads/" + req.file.filename;
+        let path = __basedir + "./public/uploads" + req.file.filename;
 
         fs.createReadStream(path)
             .pipe(csv.parse({ headers: true }))

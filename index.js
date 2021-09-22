@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const db = require("./models/server");
-const csvRoutes = require("./routes/courseroute");
+const routes = require("./routes/courseroute");
 
 global.__basedir = __dirname +"/..";
 
@@ -9,7 +9,7 @@ global.__basedir = __dirname +"/..";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-csvRoutes(app);
+routes(app);
 
 // db.sequelize.sync();
 
